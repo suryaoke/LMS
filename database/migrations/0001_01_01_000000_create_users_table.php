@@ -18,6 +18,18 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role',  ['instructor', 'student']);
+            $table->string('image')->default('/default/avatar.png');
+            $table->string('headline')->nullable();
+            $table->string('bio')->nullable();
+            $table->enum('gender', ['male', 'female']);
+            $table->string('document')->nullable();
+            $table->string('facabook')->nullable();
+            $table->string('x')->nullable();
+            $table->string('linkedind')->nullable();
+            $table->string('website')->nullable();
+            $table->string('github')->nullable();
+            $table->enum('approve_status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->enum('login_as', ['student', 'instructor'])->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
